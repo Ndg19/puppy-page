@@ -1,0 +1,76 @@
+/* Reset default margin, padding, and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding/border don’t affect width */
+}
+/* Make all images responsive and block level to remove spacing */
+img {
+  width: 100%;          /* Makes image fill its container */
+  display: block;       /* Removes unwanted spacing below images *//
+}
+/* Common blue background styling for header/footer */
+.blue-bg {
+  background-color: #195774;  
+  color: white;               
+  text-align: center;         
+  font-size: 19px;           
+}
+/* Header spacing */
+.header-wrapper {
+  padding: 27px 0 24px;   /* Top and bottom padding */
+}
+/* Responsive container: Mobile-first */
+.container {
+  width: 90%;             /* Relative width for small screens */
+  margin: 0 auto;         /* Center horizontally */
+}
+/* Space between each puppy image (stacked on mobile) */
+.container div {
+  margin-block: 30px;     /* Adds top and bottom spacing */
+}
+/* Hide the missing puppy box on mobile screens */
+.missing-puppy {
+  display: none;
+}
+/* Title for second row section */
+.more-puppies {
+  text-align: center;     /* Center the text horizontally */
+  font-size: 30px;       
+  font-weight: bold;      /* Emphasize text */
+}
+/* Footer spacing */
+.footer {
+  padding: 60px 0 75px;   /* Top and bottom padding */
+}
+/* ========== Desktop & Tablet Layout ========== */
+@media (min-width: 768px) {
+
+  /* Display puppy row side by side */
+  .container {
+    width: 760px;                   /* Fixed width for medium+ screens */
+    display: flex;                  /* Flexbox layout */
+    justify-content: space-between;/* Even spacing between items */
+  }
+  .container div {
+    width: 32%;                     /* 3 items per row with spacing */
+  }
+  /* Show missing puppy block and style it */
+  .missing-puppy {
+    display: flex;                  /* Flex to center content */
+    background-color: #ee4d65;      
+    align-items: center;           
+    justify-content: center;       
+  }
+  .missing-puppy p {
+    color: #222;                    
+    font-size: 36px;                
+    font-weight: bold;             
+    padding: 55px 50px;            
+    text-align: center;            
+  }
+  /* Adjust width for the last two puppy images */
+  .two-puppies div {
+    width: 48%;                     /* Two items per row */
+  }
+}
